@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mente Plena — Seu Espaço de Cuidado e Acolhimento</title>
+  
+  <!-- Meta tags SEO -->
+  <meta name="description" content="Encontre apoio, orientações baseadas em evidências e um espaço acolhedor focado no seu bem-estar mental. Sua jornada para uma mente saudável começa aqui.">
+  <meta name="keywords" content="saúde mental, terapia, ansiedade, depressão, burnout, autocuidado, apoio psicológico, bem-estar">
+  <meta name="author" content="Mente Plena">
+
+  <!-- Fontes Premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- 1. Navbar -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="container nav-container">
+        <a href="#hero" class="logo" id="nav-logo">
+          <!-- Ícone SVG de Folha/Coração -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          Mente Plena
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active" id="link-hero">Início</a></li>
+          <li><a href="#what-is" class="nav-link" id="link-what-is">Saúde Mental</a></li>
+          <li><a href="#selfcare" class="nav-link" id="link-selfcare">Autocuidado</a></li>
+          <li><a href="#support" class="nav-link" id="link-support">Canais de Apoio</a></li>
+          <li><a href="#faq" class="nav-link" id="link-faq">FAQ</a></li>
+          <li><a href="#footer" class="btn btn-secondary" id="btn-nav-contact">Fale Conosco</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu de navegação">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <header id="hero" class="hero">
+    <canvas id="canvas-particles"></canvas>
+    <div class="container hero-grid">
+      <div class="hero-content reveal-left">
+        <h1>Sua jornada para o <span>bem-estar</span> começa aqui.</h1>
+        <p>Um porto seguro para compreender seus sentimentos, encontrar práticas de equilíbrio e conectar-se com redes profissionais de suporte. Sinta-se acolhido em cada passo do caminho.</p>
+        <div class="hero-btns">
+          <a href="#support" class="btn btn-primary" id="btn-hero-support">Quero Ajuda</a>
+          <a href="#what-is" class="btn btn-secondary" id="btn-hero-learn">Saiba Mais</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal-right">
+        <div class="hero-bg-glow"></div>
+        <!-- Ilustração SVG Suave no lugar de arquivos de imagem -->
+        <svg class="hero-illustration-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" id="hero-svg">
+          <!-- Círculos de luz de fundo -->
+          <circle cx="250" cy="250" r="180" fill="url(#paint0_radial)" opacity="0.6"/>
+          <circle cx="250" cy="250" r="130" fill="url(#paint1_radial)" opacity="0.8"/>
+          <!-- Silhueta Meditando -->
+          <path d="M250 120c16.568 0 30-13.432 30-30s-13.432-30-30-30-30 13.432-30 30 13.432 30 30 30z" fill="#7C6FCD"/>
+          <path d="M250 140c-35 0-70 15-85 40-10 16-5 35 10 45 12 8 30-5 35-15 10-20 25-30 40-30s30 10 40 30c5 10 23 23 35 15 15-10 20-29 10-45-15-25-50-40-85-40z" fill="#7C6FCD"/>
+          <path d="M250 180c-30 0-55 25-55 55v80h110v-80c0-30-25-55-55-55z" fill="#9E92EC"/>
+          <path d="M160 315c-15 0-25 15-20 30 10 30 40 55 110 55s100-25 110-55c5-15-5-30-20-30H160z" fill="#5A4FAA"/>
+          <!-- Plantas / Folhas Orgânicas à volta -->
+          <path d="M120 380c-20-10-35-30-40-50 10 5 30 20 35 40 5 10 5 10 5 10z" fill="#64B5A0" opacity="0.8"/>
+          <path d="M380 380c20-10 35-30 40-50-10 5-30 20-35 40-5 10-5 10-5 10z" fill="#64B5A0" opacity="0.8"/>
+          <path d="M100 280c-10-15-15-35-15-55 10 10 20 25 25 45 2 8 0 10-10 10z" fill="#64B5A0" opacity="0.7"/>
+          <path d="M400 280c10-15 15-35 15-55-10 10-20 25-25 45-2 8 0 10 10 10z" fill="#64B5A0" opacity="0.7"/>
+          <!-- Elementos de Bem-Estar / Brilhos -->
+          <circle cx="160" cy="150" r="10" fill="#F4A261"/>
+          <circle cx="340" cy="160" r="8" fill="#F4A261"/>
+          <circle cx="250" cy="230" r="15" fill="#64B5A0" opacity="0.5"/>
+          <defs>
+            <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 250) rotate(90) scale(180)">
+              <stop stop-color="#7C6FCD" stop-opacity="0.3"/>
+              <stop offset="1" stop-color="#131129" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 250) rotate(90) scale(130)">
+              <stop stop-color="#64B5A0" stop-opacity="0.2"/>
+              <stop offset="1" stop-color="#131129" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Stats Section -->
+  <section class="stats reveal">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="number" data-target="1" data-suffix=" em 5">0</div>
+        <div class="label">Pessoas convivem com desafios de saúde mental mundialmente</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" data-target="86" data-suffix="%">0</div>
+        <div class="label">Dos brasileiros relatam melhora significativa com acompanhamento</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" data-target="24" data-suffix="/7">0</div>
+        <div class="label">Canais de ajuda gratuita disponíveis para você a qualquer momento</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. O que é Saúde Mental -->
+  <section id="what-is" class="section what-is">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Entendendo a Saúde Mental</h2>
+        <p>Saúde mental vai além da ausência de transtornos. É o equilíbrio emocional e social necessário para lidar com as adversidades da vida.</p>
+      </div>
+      <div class="what-is-grid">
+        <div class="concept-card reveal delay-1" id="concept-ansiedade">
+          <div class="concept-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5-2 4-2 4 2 4 2"/></svg>
+          </div>
+          <h3>Ansiedade</h3>
+          <p>Uma resposta natural ao estresse, mas que quando excessiva e persistente, pode causar prejuízos ao cotidiano. Compreender seus gatilhos é o primeiro passo.</p>
+        </div>
+        <div class="concept-card reveal delay-2" id="concept-depressao">
+          <div class="concept-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Depressão</h3>
+          <p>Condição médica comum que afeta negativamente como você se sente, pensa e age. Há tratamentos altamente eficazes que devolvem a qualidade de vida.</p>
+        </div>
+        <div class="concept-card reveal delay-3" id="concept-burnout">
+          <div class="concept-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.56 2.75c4.37-1.38 9.02 1 10.4 5.36s-1 9.02-5.36 10.4-9.02-1-10.4-5.36 1-9.02 5.36-10.4z"/></svg>
+          </div>
+          <h3>Esgotamento (Burnout)</h3>
+          <p>Resulta do estresse crônico associado ao trabalho e obrigações cotidianas. Reconhecer os limites do próprio corpo é fundamental para evitar a exaustão.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Sinais de Alerta -->
+  <section class="section alerts">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Sinais de Alerta</h2>
+        <p>A mente nos avisa quando as coisas estão pesadas demais. Saiba identificar momentos onde pausar e buscar apoio se torna essencial.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item timeline-left reveal-left">
+          <div class="timeline-content">
+            <h3>Alterações Constantes no Sono</h3>
+            <p>Dificuldade frequente para dormir, insônia ou sono excessivo que não traz descanso físico ou mental.</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-right reveal-right">
+          <div class="timeline-content">
+            <h3>Isolamento Social</h3>
+            <p>Desejo incomum de se afastar de amigos, familiares e atividades que costumavam trazer alegria.</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-left reveal-left">
+          <div class="timeline-content">
+            <h3>Mudanças de Humor Extremas</h3>
+            <p>Irritabilidade excessiva, crises de choro sem motivo aparente ou sentimentos persistentes de desesperança.</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-right reveal-right">
+          <div class="timeline-content">
+            <h3>Perda de Energia e Foco</h3>
+            <p>Sensação permanente de fadiga e cansaço, mesmo sem ter realizado grandes esforços físicos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Práticas de Autocuidado -->
+  <section id="selfcare" class="section selfcare">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Práticas de Autocuidado Diário</h2>
+        <p>Pequenos hábitos cultivados rotineiramente ajudam a criar uma base mental sólida para enfrentar os desafios do dia a dia.</p>
+      </div>
+      <div class="selfcare-grid">
+        <div class="selfcare-card reveal delay-1" id="card-meditation">
+          <div class="selfcare-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          </div>
+          <div class="selfcare-card-info">
+            <h3>Pausas para Respiração</h3>
+            <p>Dedique 5 minutos do dia para focar unicamente na sua respiração profunda, acalmando o sistema nervoso simpático.</p>
+          </div>
+        </div>
+        <div class="selfcare-card reveal delay-2" id="card-movement">
+          <div class="selfcare-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <div class="selfcare-card-info">
+            <h3>Movimento Consciente</h3>
+            <p>Caminhadas leves, alongamentos ou qualquer atividade física prazerosa liberam endorfina e diminuem o estresse acumulado.</p>
+          </div>
+        </div>
+        <div class="selfcare-card reveal delay-3" id="card-journaling">
+          <div class="selfcare-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div class="selfcare-card-info">
+            <h3>Escrever seus Pensamentos</h3>
+            <p>Colocar as emoções no papel ajuda a organizar a mente, esvaziando a sobrecarga de pensamentos intrusivos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Depoimentos -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Vozes de Acolhimento</h2>
+        <p>Saiba que você não está sozinho nessa jornada. Leia relatos de pessoas que encontraram o caminho para o equilíbrio.</p>
+      </div>
+      <div class="carousel-container reveal">
+        <div class="carousel-track">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Buscar ajuda profissional foi o melhor investimento que fiz na minha vida. Aprendi a lidar com a minha ansiedade e a viver o momento presente com mais suavidade e leveza."</p>
+            <div class="testimonial-user">
+              <div class="testimonial-avatar">LF</div>
+              <div class="testimonial-info">
+                <h4>Lucas Ferreira</h4>
+                <p>32 anos, Desenvolvedor</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Depois do burnout, achei que não conseguiria voltar a trabalhar. A terapia me ajudou a redefinir meus limites e a valorizar meu tempo de descanso."</p>
+            <div class="testimonial-user">
+              <div class="testimonial-avatar">MS</div>
+              <div class="testimonial-info">
+                <h4>Mariana Silva</h4>
+                <p>28 anos, Designer</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">"As dicas de autocuidado diário e o apoio da minha comunidade foram cruciais para que eu superasse o período mais difícil da minha vida. Falar cura!"</p>
+            <div class="testimonial-user">
+              <div class="testimonial-avatar">RO</div>
+              <div class="testimonial-info">
+                <h4>Ricardo Oliveira</h4>
+                <p>41 anos, Professor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" data-index="0" aria-label="Depoimento 1"></button>
+          <button class="carousel-dot" data-index="1" aria-label="Depoimento 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Depoimento 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Recursos de Apoio -->
+  <section id="support" class="section support">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Você Não Está Sozinho</h2>
+        <p>Existem canais gratuitos, seguros e confidenciais disponíveis a qualquer hora do dia ou da noite para te ouvir e acolher.</p>
+      </div>
+      <div class="support-grid">
+        <div class="support-card support-card-emergency reveal delay-1" id="support-cvv">
+          <span class="support-badge support-badge-red">Urgência & Escuta</span>
+          <h3>CVV — Centro de Valorização da Vida</h3>
+          <p>Atendimento voluntário e gratuito de apoio emocional e prevenção ao suicídio, sob total sigilo por telefone, e-mail e chat.</p>
+          <ul>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Ligue 188 (Gratuito)
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Disponível 24 horas todos os dias
+            </li>
+          </ul>
+          <a href="https://www.cvv.org.br/" target="_blank" rel="noopener" class="btn btn-accent" style="width: 100%;" id="btn-support-cvv">Visitar Site do CVV</a>
+        </div>
+        <div class="support-card support-card-regular reveal delay-2" id="support-sus">
+          <span class="support-badge support-badge-green">Rede Pública SUS</span>
+          <h3>CAPS & Postos de Saúde</h3>
+          <p>O Sistema Único de Saúde (SUS) oferece tratamento psicológico e psiquiátrico gratuito através dos CAPS e Unidades Básicas de Saúde (UBS).</p>
+          <ul>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Encontre o CAPS mais próximo
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Acolhimento multidisciplinar profissional
+            </li>
+          </ul>
+          <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-mental" target="_blank" rel="noopener" class="btn btn-secondary" style="width: 100%;" id="btn-support-sus">Como Funciona o SUS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ Accordion -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Perguntas Frequentes</h2>
+        <p>Esclareça suas principais dúvidas sobre o cuidado com a mente e a busca por ajuda especializada.</p>
+      </div>
+      <div class="faq-container reveal">
+        <div class="faq-item" id="faq-item-1">
+          <button class="faq-question">
+            <h3>Como sei se devo procurar terapia?</h3>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Se você sente que suas emoções estão interferindo negativamente nas suas atividades de rotina, trabalho, estudos ou relacionamentos, ou se sente um sofrimento psíquico difícil de superar sozinho, é hora de considerar o apoio de um psicoterapeuta.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-item-2">
+          <button class="faq-question">
+            <h3>Qual a diferença entre Psicólogo e Psiquiatra?</h3>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>O Psicólogo trata de demandas comportamentais e emocionais por meio da psicoterapia (conversas, reflexões e técnicas). O Psiquiatra é um médico que avalia os sintomas a partir de uma ótica orgânica e clínica, podendo diagnosticar e receitar medicamentos para auxiliar no tratamento químico e neurológico.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-item-3">
+          <button class="faq-question">
+            <h3>Como posso ajudar alguém que está passando por problemas?</h3>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>A melhor maneira de ajudar é ouvindo sem julgar, demonstrando empatia e apoio incondicional. Incentive a pessoa a buscar ajuda profissional e evite minimizar o sofrimento dela com frases prontas como "isso é só fase" ou "falta de força de vontade".</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Newsletter / Final CTA -->
+  <section class="section cta-final">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Receba doses de carinho e cuidado</h2>
+        <p>Assine nossa newsletter e receba periodicamente artigos informativos sobre saúde mental, dicas práticas de bem-estar e áudios de meditação guiada.</p>
+        <form class="cta-form" id="newsletter-form">
+          <input type="email" placeholder="Seu melhor e-mail" required aria-label="Digite seu e-mail para receber conteúdos">
+          <button type="submit" class="btn btn-primary" id="btn-submit-newsletter">Fazer Parte</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Footer -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="logo" id="footer-logo">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          Mente Plena
+        </a>
+        <p>Um portal informativo sem fins lucrativos que visa levar informações claras e humanizadas sobre saúde e equilíbrio mental.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore o Site</h4>
+        <ul>
+          <li><a href="#hero" id="footer-link-hero">Início</a></li>
+          <li><a href="#what-is" id="footer-link-what-is">Saúde Mental</a></li>
+          <li><a href="#selfcare" id="footer-link-selfcare">Autocuidado</a></li>
+          <li><a href="#support" id="footer-link-support">Canais de Apoio</a></li>
+          <li><a href="#faq" id="footer-link-faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Importante</h4>
+        <p>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Este site é estritamente informativo.
+        </p>
+        <p>Não substitui diagnósticos, consultas ou tratamentos médicos e psicológicos.</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Mente Plena. Todos os direitos reservados.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" class="social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.95 1.96C5.12 19.5 12 19.5 12 19.5s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
