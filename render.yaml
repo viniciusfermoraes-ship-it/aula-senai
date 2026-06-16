@@ -1,0 +1,14 @@
+services:
+  # Configuração para Web Service (Node.js)
+  - type: web
+    name: aula-senai-node
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+
+  # Configuração para Static Site (Recomendado)
+  - type: web
+    name: aula-senai-static
+    env: static
+    buildCommand: ""
+    publishPath: "."
