@@ -911,6 +911,135 @@ footer {
   transform: translateY(-3px);
 }
 
+/* Biblioteca Científica & Estudos */
+.library {
+  background: var(--bg-body);
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.library-category {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.category-icon {
+  font-size: 2rem;
+}
+
+.category-title h3 {
+  font-size: 1.6rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.library-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.library-item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 2rem;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.library-item-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  border-color: rgba(124, 111, 205, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.item-header {
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.badge-primary {
+  background: rgba(124, 111, 205, 0.2);
+  color: var(--primary-light);
+}
+
+.badge-secondary {
+  background: rgba(100, 181, 160, 0.2);
+  color: var(--secondary);
+}
+
+.library-item-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.library-item-card .author {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.library-item-card .description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.article-box {
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 3px solid var(--secondary);
+  padding: 1rem 1.25rem;
+  border-radius: 0 12px 12px 0;
+}
+
+.library-category:nth-child(2) .article-box {
+  border-left-color: var(--primary);
+}
+
+.article-box h5 {
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.article-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .library-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
 /* Responsividade */
 @media (max-width: 992px) {
   .hero-grid {
