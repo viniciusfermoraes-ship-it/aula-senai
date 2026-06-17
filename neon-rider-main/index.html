@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Rider - Arcade Racing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background synthwave aesthetic -->
+    <div class="synthwave-bg">
+        <div class="sun"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="game-container">
+        <!-- HUD Overlay (visible during game) -->
+        <div id="hud" style="display: none;">
+            <div class="hud-panel">
+                <span class="hud-label">Distância</span>
+                <span id="score-display" class="hud-value score-val">000000 m</span>
+            </div>
+            <div class="hud-panel">
+                <span class="hud-label">Velocidade</span>
+                <span id="speed-display" class="hud-value speed-val">0 km/h</span>
+            </div>
+            <div class="hud-panel">
+                <span class="hud-label">Tempo</span>
+                <span id="time-display" class="hud-value time-val">60 s</span>
+            </div>
+        </div>
+
+        <!-- Canvas for Game Render -->
+        <canvas id="game-canvas"></canvas>
+
+        <!-- Main Menu Overlay -->
+        <div id="main-menu" class="gui-overlay">
+            <h1 class="game-title">Neon Rider</h1>
+            <div class="menu-buttons">
+                <button id="btn-play" class="btn-neon">Jogar</button>
+                <button id="btn-garage" class="btn-neon pink">Garagem</button>
+                <button id="btn-tutorial" class="btn-neon purple">Controles</button>
+            </div>
+            <div class="controls-hint" style="margin-top: 2rem;">
+                Use as setas <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">A</span> <span class="kbd">D</span> para desviar e acelerar!
+            </div>
+        </div>
+
+        <!-- Garage & Difficulty Menu Overlay -->
+        <div id="garage-menu" class="gui-overlay hidden">
+            <h1 class="game-title" style="font-size: 2.2rem; margin-bottom: 1rem;">Garagem & Ajustes</h1>
+            
+            <h3 style="color: var(--neon-blue); font-family: 'Orbitron'; margin-top: 0.5rem;">Selecione seu Carro</h3>
+            <div class="car-showcase">
+                <!-- Cars will be injected via JS -->
+                <div class="car-card selected" data-car="0">
+                    <h3 style="font-family: 'Orbitron'; font-size: 0.95rem;">Cyber Cobra</h3>
+                    <div class="car-sprite-preview" id="preview-cobra">
+                        <!-- Canvas or SVG inline of car -->
+                    </div>
+                    <div class="car-stats">
+                        <div class="stat-row">
+                            <span>Velocidade</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar speed" style="width: 80%;"></div>
+                        </div>
+                        <div class="stat-row" style="margin-top: 5px;">
+                            <span>Direção</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar handling" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card" data-car="1">
+                    <h3 style="font-family: 'Orbitron'; font-size: 0.95rem;">Neon Phantom</h3>
+                    <div class="car-sprite-preview" id="preview-phantom"></div>
+                    <div class="car-stats">
+                        <div class="stat-row">
+                            <span>Velocidade</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar speed" style="width: 95%;"></div>
+                        </div>
+                        <div class="stat-row" style="margin-top: 5px;">
+                            <span>Direção</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar handling" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card" data-car="2">
+                    <h3 style="font-family: 'Orbitron'; font-size: 0.95rem;">Zenith GTR</h3>
+                    <div class="car-sprite-preview" id="preview-zenith"></div>
+                    <div class="car-stats">
+                        <div class="stat-row">
+                            <span>Velocidade</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar speed" style="width: 70%;"></div>
+                        </div>
+                        <div class="stat-row" style="margin-top: 5px;">
+                            <span>Direção</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="stat-bar-container">
+                            <div class="stat-bar handling" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--neon-pink); font-family: 'Orbitron'; margin-top: 0.5rem;">Dificuldade</h3>
+            <div class="difficulty-container">
+                <button class="difficulty-btn active" data-diff="easy">Fácil</button>
+                <button class="difficulty-btn" data-diff="medium">Médio</button>
+                <button class="difficulty-btn" data-diff="hard">Difícil</button>
+            </div>
+
+            <button id="btn-garage-back" class="btn-neon" style="width: 200px; padding: 8px 16px; margin-top: 1rem;">Confirmar</button>
+        </div>
+
+        <!-- Controls/Tutorial Overlay -->
+        <div id="tutorial-menu" class="gui-overlay hidden">
+            <h1 class="game-title" style="font-size: 2.5rem;">Como Jogar</h1>
+            <div style="background: var(--glass-bg); padding: 1.5rem; border-radius: 10px; border: 1px solid var(--neon-purple); max-width: 500px; text-align: left; line-height: 1.6;">
+                <p>🚀 <strong>Objetivo:</strong> Dirija o mais longe possível antes que o tempo acabe. Desvie do tráfego!</p>
+                <p>⏱️ <strong>Bônus de Tempo:</strong> Colete os itens de <strong>Bateria Azul/Rosa</strong> na pista para adicionar tempo (+10 segundos).</p>
+                <p>🔥 <strong>Quase Colisão:</strong> Passar muito perto dos carros de tráfego concede pontos de bônus!</p>
+                <p style="margin-top: 1rem;">⌨️ <strong>Controles:</strong></p>
+                <ul>
+                    <li><span class="kbd">←</span> ou <span class="kbd">A</span> : Mover para Esquerda</li>
+                    <li><span class="kbd">→</span> ou <span class="kbd">D</span> : Mover para Direita</li>
+                    <li><span class="kbd">↑</span> ou <span class="kbd">W</span> : Aumentar velocidade (Consome mais tempo, mas pontua mais rápido)</li>
+                    <li><span class="kbd">↓</span> ou <span class="kbd">S</span> : Frear</li>
+                </ul>
+            </div>
+            <button id="btn-tutorial-back" class="btn-neon pink" style="margin-top: 1.5rem;">Voltar</button>
+        </div>
+
+        <!-- Game Over Overlay -->
+        <div id="game-over" class="gui-overlay hidden">
+            <h1 class="game-title" style="color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink);">Fim de Jogo</h1>
+            
+            <div style="background: var(--glass-bg); padding: 2rem; border-radius: 12px; border: 2px solid var(--neon-pink); text-align: center; margin-bottom: 2rem; min-width: 300px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: #ccc;">Pontuação Final</h3>
+                <h2 id="final-score" style="font-family: 'Orbitron'; font-size: 2.2rem; color: var(--neon-yellow); margin-bottom: 20px; text-shadow: 0 0 10px var(--neon-yellow);">0 m</h2>
+                
+                <h4 id="new-high-score-msg" style="color: var(--neon-green); display: none; margin-bottom: 10px; animation: pulse-glow 1s infinite alternate;">Novo Recorde! 🎉</h4>
+                
+                <div style="display: flex; justify-content: space-around; gap: 15px; font-size: 0.9rem;">
+                    <div>
+                        <div style="color: #888;">Nível</div>
+                        <div id="final-difficulty" style="font-weight: bold; color: #fff; text-transform: uppercase;">Fácil</div>
+                    </div>
+                    <div>
+                        <div style="color: #888;">Carro</div>
+                        <div id="final-car" style="font-weight: bold; color: #fff;">Cyber Cobra</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-buttons">
+                <button id="btn-restart" class="btn-neon">Jogar Novamente</button>
+                <button id="btn-menu" class="btn-neon pink">Menu Principal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Game Logic -->
+    <script src="game.js"></script>
+</body>
+</html>
